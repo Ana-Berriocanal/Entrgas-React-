@@ -1,0 +1,20 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: grey;
+    border-bottom: 1px solid grey;
+
+}
+nav{
+    display: flex;
+    align-content: center;
+}
+ul li{
+    display: inline-block;
+    color: grey;
+    margin-left: 7px;
+    margin-right: 7px;
+    cursor: pointer;
+    align-items: center;
+}
