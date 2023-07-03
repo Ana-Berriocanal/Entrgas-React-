@@ -1,18 +1,15 @@
-import NavBar from './componentes/ItemCount/NavBar/NavBar';
+import NavBar from './componentes/NavBar/NavBar';
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
+import { Listacontenedora } from './componentes/ItemListContainer/ItemListContainer';
 
-
-function App() {
+const App = () => {
   return (
-    <>
-    <NavBar/>
-    <ItemListContainer bienvenida = {"Bienvenidos al inicio!"}/>
-    </>
-  );
+    <div>
+      <ItemListContainer/>
+      <Listacontenedora/>
+    </div>
+  )
 }
 
-/*   <div className="App">
-<h1>Hola Mundo</h1>
-</div> */
 
 export default App;
