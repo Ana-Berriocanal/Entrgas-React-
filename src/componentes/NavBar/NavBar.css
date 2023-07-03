@@ -18,3 +18,13 @@ ul li{
     cursor: pointer;
     align-items: center;
 }
+
+.classLink{
+    color: grey;
+    text-decoration: none;
+}
+
+.title{
+    color: grey;
+    text-decoration: none;
+}

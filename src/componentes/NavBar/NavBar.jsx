@@ -1,30 +1,46 @@
 import './NavBar.css'
 import CartWidget from '../CartWidget/CartWidget'
 import { useEffect, useState } from 'react'
+import React from 'react'
+import { Link, NavLink } from 'react-router-dom'
+
+
 
 const NavBar = () => {
-    const [Categorias, setCategorias] = useState ("");
-    const HandleCl = (Categorias) =>{
+    const [Categorias, setCategorias] = useState("");
+    const HandleCl = (Categorias) => {
         setCategorias(Categorias);
     }
-
-    useEffect(() =>{
+    useEffect(() => {
         document.title = `Sección ${Categorias}`;
-    },[Categorias])
-    return (
-    <header>
-        <h1>Artesanias Ada</h1>
-        <nav>
-        <CartWidget/>
-            <ul>
-                <li onClick={()=> HandleCl("Amigurumi")}>Amigurumi</li>
-                <li onClick={()=> HandleCl("Sección Hogar")}>Sección Hogar</li>
-                <li onClick={()=> HandleCl("Sección Bebé")}>Sección Bebé</li>
-                <li onClick={()=> HandleCl("Atrapasueños")}>Atrapasueños</li>
-            </ul>
-        </nav>
+    }, [Categorias])
 
-    </header>
+    return (
+        <header>
+            <Link className="title" to={"/"}> <h1>Artesanias Ada</h1> </Link>
+            <nav>
+                <CartWidget />
+                <ul>
+                    <li onClick={() => HandleCl("Amigurumi")}>
+                        <NavLink className="classLink" to={"/amigurumis"}> Amigurumis </NavLink>
+                    </li>
+
+                    <li onClick={() => HandleCl("Sección Hogar")}>
+                        <NavLink className="classLink" to={"/Seccionhogar"}> Sección Hogar </NavLink>
+                    </li>
+
+                    <li onClick={() => HandleCl("Sección Bebé")}>
+                        <NavLink className="classLink" to={"/SeccionBebe"}> Sección Bebé </NavLink>
+                    </li>
+
+                    <li onClick={() => HandleCl("Atrapasueños")}>
+                        <NavLink className="classLink" to={"/atrapasueños"}> Atrapasueños </NavLink>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </header>
     )
 }
 
