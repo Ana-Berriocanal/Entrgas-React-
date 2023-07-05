@@ -7,11 +7,11 @@ import React from 'react'
 
 
 const ItemListContainer = () => {
-const Articulos =[
-    {id: 1, nombre:"Muñeca Amigurumi",precio:4600},
-    {id: 2, nombre:"Atrapasueños Vito",precio:3100},
-    {id: 3, nombre:"Conejo Toto de apego",precio:4600},
-    {id: 4, nombre:"Manta Milton",precio:5600},
+const Articulos = [
+    {id: 1, nombre:"Muñeca Amigurumi",precio:4600, },
+    {id: 2, nombre:"Atrapasueños Vito",precio:3100, img:"./img/"},
+    {id: 3, nombre:"Conejo Toto de apego",precio:4600, img:"./img/"},
+    {id: 4, nombre:"Manta Milton",precio:5600, img:"./img/"},
 ]
 
     return (
@@ -21,8 +21,10 @@ const Articulos =[
                 {
                     Articulos.map(Articulos =>(
                         <li key={Articulos.id}>
+                            <p>{Articulos.img}</p>
                             <p>{Articulos.nombre}</p>
                             <p>${Articulos.precio}</p>
+
                         </li>
                     ))
                 }
