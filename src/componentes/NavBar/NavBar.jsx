@@ -18,11 +18,12 @@ const NavBar = () => {
     return (
         <header>
             <Link className="title" to={"/"}> <h1>Artesanias Ada</h1> </Link>
+
             <nav>
                 <CartWidget />
                 <ul>
                     <li onClick={() => HandleCl("Amigurumi")}>
-                        <NavLink className="classLink" to={"/amigurumis"}> Amigurumis </NavLink>
+                        <NavLink className="classLink" to={"/categoria/2"}> Amigurumis </NavLink>
                     </li>
 
                     <li onClick={() => HandleCl("Sección Hogar")}>
