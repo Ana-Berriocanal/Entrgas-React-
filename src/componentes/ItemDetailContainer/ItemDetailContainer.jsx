@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getUnProducto } from "../../Asynckmock";
+import { ItemDetail } from "../ItemDetail/ItemDetail";
 
 
 
 export const ItemDetailContainer = () => {
-	const [Filtrado, setFiltrado] = useState(null);
+	const [filtrado, setFiltrado] = useState(null);
 
-const {idItem} = useParams();
+const {id} = useParams();
 
     useEffect(() => {
-		getUnProducto(4)
+		getUnProducto(id)
         .then(resolve=> setFiltrado(resolve))
-    }, [idItem])
+    }, [id])
 
     return (
         <div>
-            <itemDetail {...Filtrado} />
+            <ItemDetail {...filtrado} />
         </div>
     )}

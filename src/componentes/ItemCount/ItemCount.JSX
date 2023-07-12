@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import React from 'react'
 
 
 //RECIBO POR PROPS Y DESESTRUCTURO  {{stock}}  OTRAS FORMAS 👉/// (props.stock) ///   const {stock} = props  /// const stock = props.stock
