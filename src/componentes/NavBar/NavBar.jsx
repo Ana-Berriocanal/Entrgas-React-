@@ -31,7 +31,7 @@ const NavBar = () => {
                     </li>
 
                     <li onClick={() => HandleCl("Sección Bebé")}>
-                        <NavLink className="classLink" to={"/SeccionBebe"}> Sección Bebé </NavLink>
+                        <NavLink className="classLink" to={"/categoria/3"}> Sección Bebé </NavLink>
                     </li>
 
                     <li onClick={() => HandleCl("Atrapasueños")}>

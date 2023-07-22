@@ -25,6 +25,7 @@ funcionProductos(idCategoria)
             <ItemList Productos={Productos} />
         </div>
     )
+
 }
 
 export default ItemListContainer

@@ -2,40 +2,49 @@ import { useState } from "react";
 import React from 'react'
 
 
-//RECIBO POR PROPS Y DESESTRUCTURO  {{stock}}  OTRAS FORMAS 👉/// (props.stock) ///   const {stock} = props  /// const stock = props.stock
-export const ItemCount = ({ stock }) => {
-	//ESTADO PARA CONTROLAR LA CANTIDAD, INICIO EN 1
-	const [initial, setInitial] = useState(1);
 
-	//ESTADO PARA CONTROLAR CUANDO SE ALCANZO EL MAXIMO EN STOCK
+export const ItemCount = ({ inicial, stock, funcionagregar }) => {
+	const [initial, setInitial] = useState(inicial);
+
 	const [errorStock, setErrorStock] = useState(false);
 
-	//FUNCION PARA MANEJAR EL AGREGAR O RESTAR CANTIDAD A COMPRAR
-	const handleClick = (value) => {
+	const incrementar =() =>{
+		if (initial < stock){
+			setInitial(initial + 1);
+		}
+	}
+
+	const decrementar =() =>{
+		if (initial > inicial){
+			setInitial(initial - 1);
+		}
+	}
+
+	/*const handleClick = (value) => {
 		if (initial + value > 0 && initial + value <= stock) {
 			setInitial(initial + value);
 			setErrorStock(false);
 		} else {
 			initial + value >= stock && setErrorStock(true);
 		}
-	};
+	}; */
 
 	return (
 		<div className='cajaContenedora'>
 			<div className='container--itemCount--buttons'>
 				<button
-					className='itemCount--button'
-					onClick={() => handleClick(-1)}>
+					className='itemCount-button'
+					onClick={() => decrementar(-1)}>
 					-
 				</button>
 				<div className='itemCount--count'>{initial}</div>
 				<button
-					className='itemCount--button'
-					onClick={() => handleClick(1)}>
+					className='itemCount-button'
+					onClick={() => incrementar(1)}>
 					+
 				</button>
 			</div>
-			<button className='itemCount--buttonCart'>Add to Cart</button>
+			<button className='itemCount--buttonCart' onClick={() => funcionagregar(initial) }>¡Lo quiero!</button>
 			{errorStock && (
 				<div className='itemCount--error'>
 					Se alcanzo el máximo disponible
